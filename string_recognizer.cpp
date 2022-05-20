@@ -7,6 +7,7 @@ bool isAcceptedByAStar(string input_str) {
    * This function checks if the string is acceptable by A*
    * The string is acceptable by A* iff it is null or a single terminal 'a'
    * that may or may not be followed by any number of terminal 'a'.
+   * For example, "", "a", "aa", "aaa", "aaaa", "aaaaa", "aaaaaa", etc.
    */
   if (input_str.length() == 0) {
     return true;
@@ -24,6 +25,7 @@ bool isAcceptedByBPlus(string input_str) {
    * This function checks if the string is acceptable by B+
    * The string is acceptable by B+ iff it contains at least one terminal 'b'
    * followed by any number of terminal 'b'.
+   * For example, "b", "bb", "bbb", "bbbb", "bbbbb", etc.
    */
   if (input_str.length() == 0) {
     return false;
@@ -41,6 +43,7 @@ bool isAcceptedByAStarBPlus(string input_str) {
    * This function checks if the string is acceptable by A*B+
    * The string is acceptable by A*B+ iff it contains at least one terminal 'b'
    * and it can have any number of terminal 'a' before the first 'b'.
+   * For example, "b", "ab", "aab", "aaab", "bb", "abb", "abbb", "aabb", etc.
    */
   if (input_str.length() == 0) {
     return false;
@@ -68,6 +71,7 @@ bool isAcceptableByABB(string input_str) {
   /*
    * This function checks if the string is acceptable by ABB
    * The string is acceptable by ABB iff it contains exactly 'abb' terminal.
+   * For example, "abb".
    */
   if (input_str.length() == 3) {
     return input_str[0] == 'a' && input_str[1] == 'b' && input_str[2] == 'b';
